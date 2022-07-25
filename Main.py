@@ -2,7 +2,7 @@ import os
 class Stack:
     def __init__(self, size):
         self.items = []
-        self.size = size
+        self.size = [None]*size
         self.top=-1
 
     def is_empty(self):
@@ -17,18 +17,20 @@ class Stack:
         if not self.is_full():
             self.top+=1
             x=int(input("Enter data to be inserted: "))
-            self.st[self.top]=x
+            self.size[self.top]=x
             # Write code here
 
     def pop(self):
         if not self.is_empty():
             self.top=-1
             y=int(input("Enter data to be deleted: "))
-            self.st[self.top]=y
+            self.size[self.top]=y
             # Write code here
 
     def status(self):
         # Write code here
+        for i in range(self.top+1):
+            print(self.size[i])
 
 # Do not change the following code
 size, queries = map(int, input().rstrip().split())
